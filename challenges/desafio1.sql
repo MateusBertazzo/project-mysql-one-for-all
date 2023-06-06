@@ -11,7 +11,7 @@ CREATE TABLE SpotifyClone.plans_user(
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.users(
-    `user_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `user_id` INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(45) NOT NULL,
     `age` INT NOT NULL,
     `subscription_date` DATE NOT NULL,
@@ -26,8 +26,8 @@ CREATE TABLE SpotifyClone.artists(
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.follower_artist(
-  `user_id` INT PRIMARY KEY AUTO_INCREMENT,
-  `artist_id` INT PRIMARY KEY AUTO_INCREMENT,
+  `user_id` INT,
+  `artist_id` INT,
   CONSTRAINT PRIMARY KEY(user_id, artist_id),
   FOREIGN KEY(user_id) REFERENCES SpotifyClone.users(user_id),
   FOREIGN KEY(artist_id) REFERENCES SpotifyClone.artists(artist_id)
@@ -52,8 +52,8 @@ CREATE TABLE SpotifyClone.songs(
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.history(
-  `user_id` INT PRIMARY KEY AUTO_INCREMENT,
-  `song_id` INT PRIMARY KEY AUTO_INCREMENT,
+  `user_id` INT,
+  `song_id` INT,
   `playback_date` DATETIME NOT NULL,
   CONSTRAINT PRIMARY KEY(user_id, song_id),
   FOREIGN KEY(user_id) REFERENCES SpotifyClone.users(user_id),
@@ -130,3 +130,22 @@ VALUES
   (7,6),
   (9,3),
   (10,2);
+
+INSERT INTO SpotifyClone.history (user_id, song_id, playback_date)
+VALUES 
+  (1, 8,"2022-02-28 10:45:55"),
+  (1, 2,"2020-05-02 05:30:35"),
+  (1, 10,"2020-03-06 11:22:33"),
+  (2, 10, "2022-08-05 08:05:17"),
+  (2, 7, "2020-01-02 07:40:33"),
+  (3, 10, "2020-11-13 16:55:13"),
+  (3, 2, "2020-12-05 16:55:13"),
+  (4, 8, "2021-08-15 17:10:10"),
+  (5, 8, "2022-01-09 01:44:33"),
+  (5, 5, "2020-08-06 15:23:43"),
+  (6, 7, "2017-01-24 00:31:17"),
+  (6, 1, "2017-10-12 12:35:20"),
+  (7, 4, "2011-12-15 22:30:49"),
+  (8, 4, "2012-03-17 14:56:41"),
+  (9, 9, "2022-02-24 21:14:22"),
+  (10, 3, "2015-12-13 08:30:22");
