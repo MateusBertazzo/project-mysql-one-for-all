@@ -60,13 +60,31 @@ CREATE TABLE SpotifyClone.history(
 ) engine = InnoDB;
 
 
-INSERT INTO SpotifyClone.tabela1 (coluna1, coluna2)
+INSERT INTO SpotifyClone.plans_user (plan_id, name_plan, price_plan)
 VALUES
-  ('exemplo de dados 1', 'exemplo de dados A'),
-  ('exemplo de dados 2', 'exemplo de dados B'),
-  ('exemplo de dados 3', 'exemplo de dados C');
+  (1, 'gratuito', 0.00),
+  (2, 'universitario', 5.99),
+  (3, 'pessoal', 6.99),
+  (4, 'familiar', 7.99);
 
-INSERT INTO SpotifyClone.tabela2 (coluna1, coluna2)
+INSERT INTO SpotifyClone.artists (user_id, name, age, subscription_date, plan_id)
 VALUES
-  ('exemplo de dados 1', 'exemplo de dados X'),
-  ('exemplo de dados 2', 'exemplo de dados Y');
+  (1, "Barbara Liskov", 82, "2019-10-20", 1),
+  (2, "Robert Cecil Martin", 58, "2017-01-06", 1),
+  (3, "Ada Lovelace", 37, "2017-12-30", 4),
+  (4, "Martin Fowler", 46, "2017-01-17", 4),
+  (5, "Sandi Metz", 58, "2018-04-29", 4),
+  (6, "Paulo Freire", 19, "2018-02-14", 2),
+  (7, "Bell Hooks", 26, "2018-01-20", 2),
+  (8, "Christopher Alexander", 85, "2019-06-05", 3),
+  (9, "Judith Butler", 45, "2020-05-13", 3),
+  (10,"Jorge Amado", 58, "2017-02-17", 3);
+
+INSERT INTO SpotifyClone.users (artist_id, name_artist)
+VALUES
+  (1, "Beyoncè"),
+  (2, "Queen"),
+  (3, "Elis Regina"),
+  (4, "Baco Exu do Blues"),
+  (5, "Blind Guardian"),
+  (6, "Nina Simone");
