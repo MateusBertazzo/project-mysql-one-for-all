@@ -1,4 +1,4 @@
--- Descomente e altere as linhas abaixo:
+-- Descomente e altere as linhas abaixo::
 
 -- CREATE TABLE SpotifyClone.tabela(
 --     coluna1 tipo restricoes,
