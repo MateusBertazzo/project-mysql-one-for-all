@@ -83,7 +83,7 @@ VALUES
 
 INSERT INTO SpotifyClone.artists (artist_id, name_artist)
 VALUES
-  (1, "Beyoncè"),
+  (1, "Beyoncé"),
   (2, "Queen"),
   (3, "Elis Regina"),
   (4, "Baco Exu do Blues"),
